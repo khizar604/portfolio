@@ -5,10 +5,10 @@ export const personalInfo = {
   location: "Karachi, Pakistan",
   bio: "IT graduate passionate about building clean, responsive web applications. Completed NAVTTC MERN Stack training with hands-on experience in full-stack development. Eager to contribute to innovative teams and grow as a developer.",
   profileImage: null,
-  email: "your.email@example.com",
+  email: "khizarsheikh480@gmail.com",
   linkedin: "https://linkedin.com/in/yourprofile",
   whatsapp: "+923001234567",
-  github: "https://github.com/yourusername",
+  github: "https://github.com/khizar604",
 };
 
 export const navLinks = [
