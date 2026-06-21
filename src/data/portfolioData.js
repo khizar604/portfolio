@@ -5,7 +5,7 @@ export const personalInfo = {
   tagline: "Building modern web applications with React, Node.js, and MongoDB",
   location: "Gujrat, Pakistan",
   bio: "IT graduate from University of Gujrat passionate about building clean, responsive web applications. Completed NAVTTC MERN Stack training with hands-on experience in full-stack development. Eager to contribute to innovative teams and grow as a developer.",
-  profileImage: null,
+  profileImage: "/profile.png",
   email: "khizarsheikh480@gmail.com",
   linkedin: "https://linkedin.com/in/yourprofile",
   whatsapp: "+923006296923",
