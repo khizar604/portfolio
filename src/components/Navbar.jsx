@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navLinks, personalInfo } from "../data/portfolioData";
 
@@ -19,30 +20,35 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
-        scrolled ? "border-b border-border bg-bg-primary/95 backdrop-blur-md" : "bg-transparent"
+      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "border-b border-border/80 bg-bg-primary/90 shadow-[0_4px_30px_rgba(34,211,238,0.05)] backdrop-blur-xl"
+          : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-[1100px] items-center justify-between px-6 py-3 md:px-8">
-        <button
+        <motion.button
           type="button"
           onClick={() => handleNavClick("hero")}
-          className="text-lg font-bold text-white transition-colors hover:text-accent"
+          className="text-lg font-bold transition-colors"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
-          {personalInfo.navBrand}
-          <span className="text-accent">.</span>
-        </button>
+          <span className="gradient-text">{personalInfo.navBrand}</span>
+          <span className="text-cyan-400">.</span>
+        </motion.button>
 
-        <ul className="hidden items-center gap-6 md:flex">
+        <ul className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
             <li key={link.id}>
-              <button
+              <motion.button
                 type="button"
                 onClick={() => handleNavClick(link.id)}
-                className="text-sm text-text-secondary transition-colors hover:text-accent"
+                className="relative rounded-lg px-3 py-2 text-sm text-text-secondary transition-colors hover:text-cyan-400"
+                whileHover={{ y: -2 }}
               >
                 {link.label}
-              </button>
+              </motion.button>
             </li>
           ))}
         </ul>
@@ -57,23 +63,35 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {isOpen && (
-        <div className="border-b border-border bg-bg-primary md:hidden">
-          <ul className="flex flex-col gap-1 px-6 py-3">
-            {navLinks.map((link) => (
-              <li key={link.id}>
-                <button
-                  type="button"
-                  onClick={() => handleNavClick(link.id)}
-                  className="block w-full py-2.5 text-left text-text-secondary transition-colors hover:text-accent"
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="overflow-hidden border-b border-border bg-bg-primary/95 backdrop-blur-xl md:hidden"
+          >
+            <ul className="flex flex-col gap-1 px-6 py-3">
+              {navLinks.map((link, i) => (
+                <motion.li
+                  key={link.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
                 >
-                  {link.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+                  <button
+                    type="button"
+                    onClick={() => handleNavClick(link.id)}
+                    className="block w-full py-2.5 text-left text-text-secondary transition-colors hover:text-cyan-400"
+                  >
+                    {link.label}
+                  </button>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

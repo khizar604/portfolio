@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Briefcase } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import { experience } from "../data/portfolioData";
@@ -9,27 +10,37 @@ export default function Experience() {
         <h2 className="section-title">Experience</h2>
         <p className="section-subtitle">My journey so far</p>
 
-        <div className="space-y-6">
-          {experience.map((item) => (
-            <div key={`${item.role}-${item.organization}`} className="card">
+        <div className="space-y-5">
+          {experience.map((item, i) => (
+            <motion.div
+              key={`${item.role}-${item.organization}`}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ delay: i * 0.15, duration: 0.5 }}
+              whileHover={{ x: 4 }}
+              className="card"
+            >
               <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex items-start gap-3">
-                  <div className="mt-1 rounded-lg bg-accent/10 p-2">
-                    <Briefcase size={20} className="text-accent" />
+                  <div className="mt-1 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 p-2">
+                    <Briefcase size={20} className="text-cyan-400" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-white">{item.role}</h3>
-                    <p className="text-accent">{item.organization}</p>
+                    <p className="text-purple-400">{item.organization}</p>
                   </div>
                 </div>
-                <span className="text-sm text-text-muted sm:shrink-0">{item.period}</span>
+                <span className="rounded-full border border-border bg-bg-secondary px-3 py-1 text-xs text-text-muted sm:shrink-0">
+                  {item.period}
+                </span>
               </div>
               <ul className="ml-11 list-inside list-disc space-y-1 text-text-secondary">
                 {item.description.map((point) => (
                   <li key={point}>{point}</li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
