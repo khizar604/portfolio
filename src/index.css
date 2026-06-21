@@ -31,26 +31,26 @@
 
 @layer utilities {
   .section-container {
-    @apply mx-auto w-full max-w-[1100px] px-6 py-20 md:px-8;
+    @apply mx-auto w-full max-w-[1100px] px-6 py-10 md:px-8 md:py-12;
   }
 
   .section-title {
-    @apply mb-4 text-3xl font-bold tracking-tight text-white md:text-4xl;
+    @apply mb-2 text-2xl font-bold tracking-tight text-white md:text-3xl;
   }
 
   .section-subtitle {
-    @apply mb-12 text-text-secondary;
+    @apply mb-6 text-sm text-text-secondary md:mb-8;
   }
 
   .card {
-    @apply rounded-xl border border-border bg-surface p-6 transition-colors hover:border-accent/40;
+    @apply rounded-xl border border-border bg-surface/80 p-5 backdrop-blur-sm transition-colors hover:border-accent/40;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-hover;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-transparent px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-accent hover:text-accent;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-transparent px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-accent hover:text-accent;
   }
 }

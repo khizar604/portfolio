@@ -23,17 +23,17 @@ export default function Navbar() {
         scrolled ? "border-b border-border bg-bg-primary/95 backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-[1100px] items-center justify-between px-6 py-4 md:px-8">
+      <nav className="mx-auto flex max-w-[1100px] items-center justify-between px-6 py-3 md:px-8">
         <button
           type="button"
           onClick={() => handleNavClick("hero")}
           className="text-lg font-bold text-white transition-colors hover:text-accent"
         >
-          {personalInfo.name.split(" ")[0]}
+          {personalInfo.navBrand}
           <span className="text-accent">.</span>
         </button>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <li key={link.id}>
               <button
@@ -59,13 +59,13 @@ export default function Navbar() {
 
       {isOpen && (
         <div className="border-b border-border bg-bg-primary md:hidden">
-          <ul className="flex flex-col gap-1 px-6 py-4">
+          <ul className="flex flex-col gap-1 px-6 py-3">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <button
                   type="button"
                   onClick={() => handleNavClick(link.id)}
-                  className="block w-full py-3 text-left text-text-secondary transition-colors hover:text-accent"
+                  className="block w-full py-2.5 text-left text-text-secondary transition-colors hover:text-accent"
                 >
                   {link.label}
                 </button>

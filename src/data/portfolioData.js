@@ -1,13 +1,14 @@
 export const personalInfo = {
   name: "Muhammad Khizar Irfan",
+  navBrand: "Khizar",
   title: "Web Developer | MERN Stack",
   tagline: "Building modern web applications with React, Node.js, and MongoDB",
-  location: "Karachi, Pakistan",
-  bio: "IT graduate passionate about building clean, responsive web applications. Completed NAVTTC MERN Stack training with hands-on experience in full-stack development. Eager to contribute to innovative teams and grow as a developer.",
+  location: "Gujrat, Pakistan",
+  bio: "IT graduate from University of Gujrat passionate about building clean, responsive web applications. Completed NAVTTC MERN Stack training with hands-on experience in full-stack development. Eager to contribute to innovative teams and grow as a developer.",
   profileImage: null,
   email: "khizarsheikh480@gmail.com",
   linkedin: "https://linkedin.com/in/yourprofile",
-  whatsapp: "+923001234567",
+  whatsapp: "+923006296923",
   github: "https://github.com/khizar604",
 };
 
@@ -22,54 +23,64 @@ export const navLinks = [
 
 export const skills = [
   {
-    category: "Frontend",
-    items: ["HTML5", "CSS3", "JavaScript", "React", "Tailwind CSS", "Responsive Design"],
+    category: "MERN Stack",
+    items: ["MongoDB", "Express.js", "React.js", "Node.js"],
   },
   {
-    category: "Backend",
-    items: ["Node.js", "Express.js", "REST APIs", "JWT Authentication"],
+    category: "Frontend",
+    items: ["HTML5", "CSS3", "JavaScript (ES6+)", "Bootstrap", "Responsive Design"],
+  },
+  {
+    category: "Backend & APIs",
+    items: ["REST API Development", "JWT Authentication", "Node.js"],
+  },
+  {
+    category: "Other Technologies",
+    items: ["Google Maps API", "Django (basics)", "Flutter (basics)"],
   },
   {
     category: "Database",
-    items: ["MongoDB", "Mongoose"],
+    items: ["MongoDB", "MySQL", "Database Management"],
   },
   {
     category: "Tools",
-    items: ["Git", "GitHub", "VS Code", "Postman", "npm"],
+    items: ["Git", "GitHub", "Figma", "Canva", "VS Code", "Postman", "MS Office"],
+  },
+  {
+    category: "Soft Skills",
+    items: ["Teaching", "Team Leadership", "Problem Solving", "Communication"],
   },
 ];
 
 export const projects = [
   {
     id: 1,
-    name: "Project One",
+    name: "StyleHub",
     description:
-      "A full-stack web application that solves a real-world problem with a clean user interface and robust backend API.",
-    techStack: ["React", "Node.js", "Express", "MongoDB"],
+      "A full-stack fashion e-commerce platform with Django admin panel for managing products, orders, brand submissions, and file uploads.",
+    techStack: ["Django", "Python", "MySQL", "Bootstrap", "REST API"],
     features: [
-      "User authentication and authorization",
-      "CRUD operations with REST API",
-      "Responsive design for all devices",
-      "Form validation and error handling",
+      "Admin dashboard for products, orders, and brand submissions",
+      "User authentication and authorization system",
+      "Order management with order items tracking",
+      "File upload and product catalog management",
     ],
-    githubUrl: "https://github.com/yourusername/project-one",
-    liveUrl: "https://project-one-demo.netlify.app",
-    image: null,
+    githubUrl: "https://github.com/khizar604/stylehub",
+    image: "/stylehub-admin.png",
   },
   {
     id: 2,
-    name: "Project Two",
+    name: "MERN Stack Project",
     description:
-      "A MERN stack application built during NAVTTC training, demonstrating full-stack development skills and modern UI patterns.",
-    techStack: ["React", "Node.js", "Express", "MongoDB", "JWT"],
+      "A full-stack web application built during NAVTTC training, demonstrating MERN stack development with modern UI and REST API integration.",
+    techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
     features: [
       "Dynamic data fetching and state management",
-      "Protected routes and session handling",
-      "MongoDB database integration",
-      "Deployed on cloud platform",
+      "Protected routes and JWT authentication",
+      "MongoDB database integration with Mongoose",
+      "Responsive design for all devices",
     ],
-    githubUrl: "https://github.com/yourusername/project-two",
-    liveUrl: "https://project-two-demo.netlify.app",
+    githubUrl: "https://github.com/khizar604",
     image: null,
   },
 ];
@@ -87,10 +98,11 @@ export const experience = [
   },
   {
     role: "University Projects",
-    organization: "IT Degree Program",
-    period: "2020 – 2024",
+    organization: "University of Gujrat",
+    period: "2021 – 2025",
     description: [
       "Developed web applications as part of coursework and final year project",
+      "Built StyleHub e-commerce platform with Django admin panel",
       "Applied software engineering principles and database design concepts",
     ],
   },
@@ -99,8 +111,8 @@ export const experience = [
 export const education = [
   {
     degree: "Bachelor of Science in Information Technology",
-    institution: "Your University Name",
-    period: "2020 – 2024",
+    institution: "University of Gujrat",
+    period: "2021 – 2025",
     details: "Relevant coursework: Web Development, Database Systems, Software Engineering, Data Structures",
   },
   {

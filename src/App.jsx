@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import AnimatedBackground from "./components/AnimatedBackground";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -11,6 +12,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
+      <AnimatedBackground />
       <Navbar />
       <main>
         <Hero />
